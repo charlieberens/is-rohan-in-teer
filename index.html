@@ -38,7 +38,10 @@
     </head>
     <body>
         <div id="app">
-            <h1 @click="() => {count += 1}">Yes.</h1>
+            <h1 @click="() => {count += 1}">
+                <span v-if="count == 3">Yes.</span
+                ><span v-else>Shopping List</span>
+            </h1>
             <div class="shoppingList" v-if="count == 3">
                 <ul>
                     <li>Dish Soap</li>
