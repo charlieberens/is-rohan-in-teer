@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Is Rohan in Teer?</title>
+        <meta name="robots" content="noindex" />
         <style>
             body {
                 display: flex;
@@ -19,9 +20,47 @@
                 color: #ffffff;
                 font-size: 400%;
             }
+            #app {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+            }
+            .shoppingList {
+                color: white;
+                display: flex;
+                flex-direction: column;
+            }
         </style>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
-        <h1>Yes.</h1>
+        <div id="app">
+            <h1 @click="() => {count += 1}">Yes.</h1>
+            <div class="shoppingList" v-if="count == 3">
+                <ul>
+                    <li>Dish Soap</li>
+                    <li>Hand Soap</li>
+                    <li>TP</li>
+                    <li>Bananas</li>
+                    <li>Snacky Kind of Protein Bar Type Things</li>
+                    <li>Nice shirt for tomorrow. Might be a stretch.</li>
+                    <li>Eggs</li>
+                    <li>Vitamins x 2</li>
+                    <li>Cookies</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            const { createApp, ref } = Vue;
+            createApp({
+                setup() {
+                    const count = ref(0);
+                    return { count };
+                },
+            }).mount("#app");
+        </script>
     </body>
 </html>
