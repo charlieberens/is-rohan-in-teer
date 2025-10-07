@@ -39,21 +39,23 @@
     <body>
         <div id="app">
             <h1 @click="() => {count += 1}">
-                <span v-if="count != 3">Yes.</span
+                <span v-if="count != 3">No.</span
                 ><span v-else>Shopping List</span>
             </h1>
             <div class="shoppingList" v-if="count == 3">
                 <ul>
                     <li>Dish Soap</li>
+                    <li>Hamon</li>
                     <li>Hand Soap</li>
                     <li>TP</li>
                     <li>Bananas</li>
                     <li>Snacky Kind of Protein Bar Type Things</li>
-                    <li>Nice shirt for tomorrow. Might be a stretch.</li>
                     <li>Eggs</li>
                     <li>Vitamins x 2</li>
                     <li>Cookies</li>
+                    <li>Toothpaste</li>
                 </ul>
+                <img src="https://www.cellartours.com/wp-content/uploads/2017/02/jamonero-serving-ham.jpg" />
             </div>
         </div>
         <script>
@@ -67,3 +69,4 @@
         </script>
     </body>
 </html>
+
